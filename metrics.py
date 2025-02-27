@@ -69,7 +69,7 @@ class MOSNet(Metric):
     def __init__(self, sr=22050, **kwargs):
         super().__init__(**kwargs)
 
-        self.mos_net = Wav2Vec2MOS("weights/wave2vec2mos.pth")
+        self.mos_net = Wav2Vec2MOS("checkpoints/hifi_pp/weights/wave2vec2mos.pth")
         self.sr = sr
 
     def better(self, first, second):

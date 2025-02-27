@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEIGHTS_DIR="weights"
+WEIGHTS_DIR="checkpoints/hifi_pp/weights"
 mkdir ./${WEIGHTS_DIR}
 
 WAV2VEC_WEIGHTS="https://zenodo.org/record/6201162/files/wav2vec2.ckpt?download=1"

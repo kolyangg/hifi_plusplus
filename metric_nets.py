@@ -34,7 +34,8 @@ class Wav2Vec2MOS(nn.Module):
             self.encoder.eval()
             for p in self.encoder.parameters():
                 p.requires_grad_(False)
-        self.load_state_dict(extract_prefix("model.", torch.load(path)["state_dict"]))
+        # self.load_state_dict(extract_prefix("model.", torch.load(path)["state_dict"]))
+        self.load_state_dict(extract_prefix("model.", torch.load(path, weights_only = False)["state_dict"]))
         self.eval()
         self.cuda()
         self.processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")

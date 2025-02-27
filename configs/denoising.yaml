@@ -9,7 +9,8 @@ training:
 data:
   name: voicebank
   loader: infinite
-  voicebank_dir: "/media/vctk/voicebank-demand_v1_full/"
+  # voicebank_dir: "/media/vctk/voicebank-demand_v1_full/"
+  voicebank_dir: "data/voicebank_demand/16k/test/"
   sampling_rate: 16000
   num_workers: 8
 
@@ -17,8 +18,8 @@ dataset:
   voicebank:
     val:
       path_prefix: ${data.voicebank_dir}
-      clean_wavs_dir: "clean_testset_wav"
-      noisy_wavs_dir: "noisy_testset_wav"
+      clean_wavs_dir: "clean"
+      noisy_wavs_dir: "noisy"
       sampling_rate: ${data.sampling_rate}
       segment_size: 32768
       device: ${training.device}
